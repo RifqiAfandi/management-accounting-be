@@ -2,27 +2,24 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('JurnalUmums', {
+    await queryInterface.createTable('BuktiTransaksis', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tanggal: {
+      no_bukti: {
+        type: Sequelize.STRING
+      },
+      tanggal_transaksi: {
         type: Sequelize.DATE
       },
-      keterangan: {
+      deskripsi: {
         type: Sequelize.TEXT
       },
-      akunDebitId: {
-        type: Sequelize.INTEGER
-      },
-      akunKreditId: {
-        type: Sequelize.INTEGER
-      },
-      jumlah: {
-        type: Sequelize.DECIMAL
+      referensi: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('JurnalUmums');
+    await queryInterface.dropTable('BuktiTransaksis');
   }
 };

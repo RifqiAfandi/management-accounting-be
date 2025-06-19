@@ -11,15 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Akun.hasMany(models.JurnalUmum, { as: 'debitTransaksi', foreignKey: 'akunDebitId' });
-      Akun.hasMany(models.JurnalUmum, { as: 'kreditTransaksi', foreignKey: 'akunKreditId' });
     }
   }
   Akun.init({
-    kode_akun: DataTypes.STRING,
+    nomor_akun: DataTypes.STRING,
     nama_akun: DataTypes.STRING,
-    tipe: DataTypes.STRING,
-    kategori: DataTypes.STRING
+    kelompok_akun: DataTypes.STRING,
+    posisi_saldo_normal: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Akun',

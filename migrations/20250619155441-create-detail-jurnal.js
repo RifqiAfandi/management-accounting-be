@@ -2,27 +2,24 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('BukuBesars', {
+    await queryInterface.createTable('DetailJurnals', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      akunId: {
-        type: Sequelize.INTEGER
-      },
-      tanggal: {
-        type: Sequelize.DATE
-      },
-      debit: {
+      debet: {
         type: Sequelize.DECIMAL
       },
       kredit: {
         type: Sequelize.DECIMAL
       },
-      saldo: {
-        type: Sequelize.DECIMAL
+      JurnalUmumId: {
+        type: Sequelize.INTEGER
+      },
+      AkunNomorAkun: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -35,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('BukuBesars');
+    await queryInterface.dropTable('DetailJurnals');
   }
 };

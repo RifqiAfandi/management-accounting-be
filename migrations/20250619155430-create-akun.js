@@ -9,16 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      kode_akun: {
+      nomor_akun: {
         type: Sequelize.STRING
       },
       nama_akun: {
         type: Sequelize.STRING
       },
-      tipe: {
+      kelompok_akun: {
         type: Sequelize.STRING
       },
-      kategori: {
+      posisi_saldo_normal: {
         type: Sequelize.STRING
       },
       createdAt: {
